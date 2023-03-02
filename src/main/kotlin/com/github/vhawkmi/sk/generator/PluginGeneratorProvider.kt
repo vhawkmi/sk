@@ -10,5 +10,7 @@ import com.android.tools.idea.wizard.template.WizardTemplateProvider
  */
 class PluginGeneratorProvider : WizardTemplateProvider() {
 
-    override fun getTemplates(): List<Template> = listOf()
+    override fun getTemplates(): List<Template> = listOf(
+        simpleFragmentGenerator,
+    )
 }
