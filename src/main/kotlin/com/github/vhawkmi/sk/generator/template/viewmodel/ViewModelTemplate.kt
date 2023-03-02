@@ -101,8 +101,5 @@ class ${modelName}ViewModel(application: Application): BaseViewModel2(applicatio
         }
     }
 
-  
-
-
 }
 """

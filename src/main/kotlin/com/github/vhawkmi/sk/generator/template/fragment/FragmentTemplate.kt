@@ -1,4 +1,4 @@
-package com.github.vhawkmi.sk.generator.fragment
+package com.github.vhawkmi.sk.generator.template.fragment
 
 /**
  *

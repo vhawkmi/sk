@@ -1,4 +1,4 @@
-package com.github.vhawkmi.sk.generator.res.layout
+package com.github.vhawkmi.sk.generator.template.layout
 
 /**
  *
