@@ -4,7 +4,13 @@
     <name>IntelliJ Platform Plugin sk</name>
     <vendor>vhawkmi</vendor>
 
+    <!-- Product and plugin compatibility requirements -->
+    <!-- https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html -->
+    <depends>org.jetbrains.android</depends>
+    <depends>org.jetbrains.kotlin</depends>
+    <depends>com.intellij.modules.java</depends>
     <depends>com.intellij.modules.platform</depends>
+
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.github.vhawkmi.sk.services.MyApplicationService"/>
