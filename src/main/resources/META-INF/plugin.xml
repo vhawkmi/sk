@@ -22,6 +22,6 @@
     </applicationListeners>
 
     <extensions defaultExtensionNs="com.android.tools.idea.wizard.template">
-        <wizardTemplateProvider implation="com.github.vhawkmi.sk.generator.PluginGeneratorProvider" />
+        <wizardTemplateProvider implementation="com.github.vhawkmi.sk.generator.PluginGeneratorProvider" />
     </extensions>
 </idea-plugin>
