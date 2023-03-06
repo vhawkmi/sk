@@ -28,12 +28,12 @@ fun RecipeExecutor.simpleFragmentRecipe(
         // 生成 Fragment
         save(
             simpleFragmentTemplate(packageName = packageName, modelName = modelName, viewName = layoutName, desc = desc),
-            srcOut.resolve("ui/${modelName}.${ktOrJavaExt}")
+            srcOut.resolve("ui/${modelName}Fragment.${ktOrJavaExt}")
         )
         // 生成 ViewModel
-        save(simpleViewModelTemplate(packageName, modelName, desc), srcOut.resolve("viewmodel/${modelName}.${ktOrJavaExt}"))
+        save(simpleViewModelTemplate(packageName, modelName, desc), srcOut.resolve("viewmodel/${modelName}ViewModel.${ktOrJavaExt}"))
         // 生成UIStatus
-        save(simpleUiStatusTemplate(packageName, modelName, desc), srcOut.resolve("bean/${modelName}.${ktOrJavaExt}"))
+        save(simpleUiStatusTemplate(packageName, modelName, desc), srcOut.resolve("bean/${modelName}UiStatus.${ktOrJavaExt}"))
 
         //生成 fragment_layout
         save(simpleLayoutTemp(desc), resOut.resolve("layout/${layoutName}.xml"))
