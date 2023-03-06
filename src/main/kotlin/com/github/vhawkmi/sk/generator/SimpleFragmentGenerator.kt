@@ -14,6 +14,8 @@ import com.github.vhawkmi.sk.defaultPackageNameParameter
 
 val simpleFragmentGenerator
     get() = template {
+        name = "mmvm fragment"
+        description = "生成mmvm框架的Fragment和layout以及viewmodel"
         minApi = MIN_API
         category = Category.Fragment
         formFactor = FormFactor.Mobile

@@ -18,7 +18,7 @@ import com.jdd.base.ui.widget.LoadingLayout
 import com.qiuku8.android.common.utils.KtNetResult
 import com.qiuku8.android.common.utils.startHttp
 import com.qiuku8.android.common.utils.toast
-import com.qiuku8.android.module.topic.uistatus.${modelName}UiStatus
+import ${packageName}.bean.${modelName}UiStatus
 import com.qiuku8.android.network.Action
 import com.qiuku8.android.network.DomainUrl
 import com.qiuku8.android.ui.base.BaseViewModel2

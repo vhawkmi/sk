@@ -9,7 +9,7 @@ package com.github.vhawkmi.sk.generator.template.bean
  */
 
 fun simpleUiStatusTemplate(packageName : String,modelName : String,desc : String) = """
-    package ${packageName}.uistatus
+    package ${packageName}.bean
 
     import com.qiuku8.android.ui.base.UiStatus
 

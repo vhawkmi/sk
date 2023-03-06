@@ -12,18 +12,19 @@ package com.github.vhawkmi.sk.generator.template.fragment
 fun simpleFragmentTemplate(packageName : String,modelName : String,viewName : String,desc : String) = """
     package ${packageName}.ui
 
+    import android.os.Bundle
     import androidx.fragment.app.viewModels
     import androidx.recyclerview.widget.LinearLayoutManager
     import com.qiuku8.android.R
     import com.qiuku8.android.databinding.Fragment${modelName}Binding
-    import com.qiuku8.android.module.topic.viewmodel.${modelName}ViewModel
+    import ${packageName}.viewmodel.${modelName}ViewModel
     import com.qiuku8.android.ui.base.BaseBindingFragment
 
     /**
      *
      * @Description:  ${desc}  
      */
-    class ${modelName}Fragment : BaseBindingFragment<Fragment${modelName}Binding>(), Searchable {
+    class ${modelName}Fragment : BaseBindingFragment<Fragment${modelName}Binding>() {
 
         private val viewModel: ${modelName}ViewModel by viewModels()
 
@@ -56,17 +57,17 @@ fun simpleFragmentTemplate(packageName : String,modelName : String,viewName : St
 
         override fun initViews() {
             binding.layoutLoading.setOnReloadListener {
-                viewModel.searchByKeyWords(lastKeyWord, isFirst = true, isRefresh = true)
+                // todo reload
             }
 
             binding.layoutRefresh.setEnableRefresh(true)
             binding.layoutRefresh.setEnableLoadMore(true)
             binding.layoutRefresh.setOnRefreshListener {
-                viewModel.searchByKeyWords(lastKeyWord, isFirst = false, isRefresh = true)
+                // todo refresh
             }
         
 
-            binding.recycleSearchResult.let {
+            binding.recycleContent.let {
                 it.layoutManager = LinearLayoutManager(requireActivity())
                 it.adapter = mAdapter
             }
