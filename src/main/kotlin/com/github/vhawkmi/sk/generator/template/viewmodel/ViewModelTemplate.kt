@@ -63,7 +63,22 @@ class ${modelName}ViewModel(application: Application): BaseViewModel2(applicatio
 
             when(result.status){
                 KtNetResult.SUCCESS ->{
-                    // todo 个性化数据处理
+                   
+                    var uiStatus = ${modelName}UiStatus()
+                    uiStatus.isRefreshing = false
+                    if (result.data.isNullOrEmpty()) {
+                        if (isFirst) {
+                            uiStatus.loadingStatus = LoadingLayout.Empty
+                        }
+                        uiStatus.noMoreData = true
+                    } else {
+                        uiStatus.isFirstPageData = isRefresh
+                        uiStatus.loadingStatus = LoadingLayout.Success
+                         // todo 个性化数据处理
+                        uiStatus.messageList = result.data
+                        uiStatus.noMoreData = result.data?.size ?:0 < 20
+                    }
+                    uiStatusLiveData.postValue(uiStatus)
                     pageNo++
                 }
                 KtNetResult.FAILURE ->{
